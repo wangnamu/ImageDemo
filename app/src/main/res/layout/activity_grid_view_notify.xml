@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.ufo.imagedemo.GridViewNotifyActivity">
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add a image"/>
+
+
+    <com.ufo.ccphotogridview.CCPhotoGridView
+        android:id="@+id/cc_grid_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        app:horizontalSpacing="5dp"
+        app:maxSize="9"
+        app:numColumns="3"
+        app:ratio="0.8"
+        app:verticalSpacing="5dp">
+    </com.ufo.ccphotogridview.CCPhotoGridView>
+
+
+</LinearLayout>

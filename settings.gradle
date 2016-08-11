@@ -1,0 +1,1 @@
+include ':app', ':ccphotoview', ':imageutil', ':ccphotopreview', ':ccphotogridview', ':ccphotopaint'

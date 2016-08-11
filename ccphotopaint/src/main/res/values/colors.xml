@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="view_bg">#CA000000</color>
+    <color name="top_btn">#ca282828</color>
+
+    <color name="colorNormal">#FFFFFF</color>
+    <color name="colorPressed">#C9DADADA</color>
+
+
+    <color name="blueColorNormal">#002fff</color>
+    <color name="blueColorPressed">#c8002fff</color>
+
+    <color name="greenColorNormal">#4cff00</color>
+    <color name="greenColorPressed">#c84cff00</color>
+
+    <color name="yellowColorNormal">#ffe600</color>
+    <color name="yellowColorPressed">#c8ffe600</color>
+
+    <color name="orangeColorNormal">#ff6600</color>
+    <color name="orangeColorPressed">#c8ff6600</color>
+
+    <color name="redColorNormal">#ff0000</color>
+    <color name="redColorPressed">#c8ff0000</color>
+
+</resources>

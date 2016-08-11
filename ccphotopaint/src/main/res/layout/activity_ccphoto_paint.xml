@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/view_bg"
+    android:fitsSystemWindows="true"
+    tools:context="com.ufo.ccphotopaint.CCPhotoPaintActivity">
+
+    <com.ufo.ccphotopaint.widget.PaintImageView
+        android:id="@+id/touch_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        app:paintColor="@color/redColorNormal"
+        app:paintWidth="8"
+        />
+
+    <Button
+        android:id="@+id/btn_close"
+        android:layout_width="@dimen/top_button"
+        android:layout_height="@dimen/top_button"
+        android:layout_gravity="top|start"
+        android:layout_marginLeft="@dimen/fab_margin"
+        android:layout_marginStart="@dimen/fab_margin"
+        android:layout_marginTop="@dimen/fab_margin"
+        android:background="@drawable/ic_close_white_24dp"/>
+
+    <Button
+        android:id="@+id/btn_next"
+        android:layout_width="@dimen/top_button"
+        android:layout_height="@dimen/top_button"
+        android:layout_gravity="top|end"
+        android:layout_marginEnd="@dimen/fab_margin"
+        android:layout_marginRight="@dimen/fab_margin"
+        android:layout_marginTop="@dimen/fab_margin"
+        android:background="@drawable/ic_check_white_24dp"/>
+
+    <com.ufo.ccphotopaint.fab.FloatingActionButton
+        android:id="@+id/fab_clear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginBottom="@dimen/fab_margin"
+        android:visibility="gone"
+        app:fab_colorNormal="#72000000"
+        app:fab_colorPressed="#f2121212"
+        app:fab_icon="@drawable/ic_undo_white_24dp"
+        app:fab_size="mini"/>
+
+
+    <com.ufo.ccphotopaint.fab.FloatingActionsMenu
+        android:id="@+id/fab_menu_action"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_marginBottom="@dimen/fab_margin"
+        android:layout_marginEnd="@dimen/fab_margin"
+        android:layout_marginRight="@dimen/fab_margin"
+        app:fab_addButtonColorNormal="@color/colorNormal"
+        app:fab_addButtonColorPressed="@color/colorPressed"
+        app:fab_addButtonIcon="@drawable/ic_touch_app_black_24dp"
+        app:fab_addButtonSize="mini">
+
+
+        <com.ufo.ccphotopaint.fab.FloatingActionButton
+            android:id="@+id/fab_action_draw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tag="@string/paint_state_draw"
+            app:fab_colorNormal="@color/colorNormal"
+            app:fab_colorPressed="@color/colorPressed"
+            app:fab_icon="@drawable/ic_gesture_black_24dp"
+            app:fab_size="mini"/>
+
+
+        <com.ufo.ccphotopaint.fab.FloatingActionButton
+            android:id="@+id/fab_action_hand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tag="@string/paint_state_touch"
+            android:visibility="gone"
+            app:fab_colorNormal="@color/colorNormal"
+            app:fab_colorPressed="@color/colorPressed"
+            app:fab_icon="@drawable/ic_touch_app_black_24dp"
+            app:fab_size="mini"/>
+
+
+    </com.ufo.ccphotopaint.fab.FloatingActionsMenu>
+
+
+    <com.ufo.ccphotopaint.fab.FloatingActionsMenu
+        android:id="@+id/fab_menu_color"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start|bottom"
+        android:layout_marginBottom="@dimen/fab_margin"
+        android:layout_marginLeft="@dimen/fab_margin"
+        android:layout_marginStart="@dimen/fab_margin"
+        app:fab_addButtonColorNormal="@color/redColorNormal"
+        app:fab_addButtonColorPressed="@color/redColorPressed"
+        app:fab_addButtonSize="mini">
+
+        <com.ufo.ccphotopaint.fab.FloatingActionButton
+            android:id="@+id/fab_color_blue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_colorNormal="@color/blueColorNormal"
+            app:fab_colorPressed="@color/blueColorPressed"
+            app:fab_size="mini"/>
+
+        <com.ufo.ccphotopaint.fab.FloatingActionButton
+            android:id="@+id/fab_color_green"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_colorNormal="@color/greenColorNormal"
+            app:fab_colorPressed="@color/greenColorPressed"
+            app:fab_size="mini"/>
+
+        <com.ufo.ccphotopaint.fab.FloatingActionButton
+            android:id="@+id/fab_color_yellow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_colorNormal="@color/yellowColorNormal"
+            app:fab_colorPressed="@color/yellowColorPressed"
+            app:fab_size="mini"/>
+
+        <com.ufo.ccphotopaint.fab.FloatingActionButton
+            android:id="@+id/fab_color_orange"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_colorNormal="@color/orangeColorNormal"
+            app:fab_colorPressed="@color/orangeColorPressed"
+            app:fab_size="mini"/>
+
+        <com.ufo.ccphotopaint.fab.FloatingActionButton
+            android:id="@+id/fab_color_red"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:fab_colorNormal="@color/redColorNormal"
+            app:fab_colorPressed="@color/redColorPressed"
+            app:fab_size="mini"/>
+
+
+    </com.ufo.ccphotopaint.fab.FloatingActionsMenu>
+
+
+</FrameLayout>

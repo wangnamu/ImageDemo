@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:textSize="18sp"/>
+
+    <com.ufo.ccphotogridview.CCPhotoGridView
+        android:id="@+id/ufo_grid_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        app:horizontalSpacing="5dp"
+        app:maxSize="9"
+        app:numColumns="3"
+        app:ratio="0.8"
+        app:verticalSpacing="5dp">
+    </com.ufo.ccphotogridview.CCPhotoGridView>
+
+</LinearLayout>
