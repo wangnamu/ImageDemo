@@ -7,7 +7,6 @@ import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -27,6 +26,12 @@ public class CCPhotoPaintActivity extends AppCompatActivity {
     public final static String KEY_WRITE_PATH = "key_path";
 
 
+    private final static String STATE_BITMAP = "state_bitmap";
+    private final static String STATE_CAN_DRAW = "state_can_draw";
+    private final static String STATE_PAINT_COLOR = "state_paint_color";
+    private final static String STATE_CLEAR = "state_clear";
+
+
     protected FloatingActionsMenu mFloatingActionsMenu;
     protected FloatingActionsMenu mFloatingColorMenu;
     protected PaintImageView mPaintImageView;
@@ -44,12 +49,70 @@ public class CCPhotoPaintActivity extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_ACTION_BAR_OVERLAY);
         setContentView(R.layout.activity_ccphoto_paint);
 
+
         initData();
         initPaintImageView();
         initButton();
         initActionsMenu();
         initColorMenu();
 
+
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        Bitmap bitmap = savedInstanceState.getParcelable(STATE_BITMAP);
+        mPaintImageView.setBitmap(bitmap);
+
+        Boolean candraw = savedInstanceState.getBoolean(STATE_CAN_DRAW);
+        if (candraw) {
+            if (mFloatingActionsMenu.isExpanded())
+                mFloatingActionsMenu.collapse();
+            FloatingActionButton floatingActionButton = (FloatingActionButton) findViewById(R.id.fab_action_draw);
+            if (floatingActionButton != null) {
+                floatingActionButton.performClick();
+            }
+        } else {
+            if (mFloatingActionsMenu.isExpanded())
+                mFloatingActionsMenu.collapse();
+            FloatingActionButton floatingActionButton = (FloatingActionButton) findViewById(R.id.fab_action_hand);
+            if (floatingActionButton != null) {
+                floatingActionButton.performClick();
+            }
+        }
+
+
+        int paintcolor = savedInstanceState.getInt(STATE_PAINT_COLOR);
+
+        for (int i = 0; i < mFloatingColorMenu.getChildCount() - 1; i++) {
+            FloatingActionButton floatingActionButton = (FloatingActionButton) mFloatingColorMenu.getChildAt(i);
+            if (floatingActionButton.getColorNormal() == paintcolor) {
+                floatingActionButton.performClick();
+            }
+        }
+
+
+        boolean clear = savedInstanceState.getBoolean(STATE_CLEAR);
+        if (clear) {
+            mClearActionButton.setVisibility(View.VISIBLE);
+        } else {
+            mClearActionButton.setVisibility(View.GONE);
+        }
+
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        outState.putParcelable(STATE_BITMAP, mPaintImageView.getBitmap());
+        outState.putBoolean(STATE_CAN_DRAW, mPaintImageView.getCanDraw());
+        outState.putInt(STATE_PAINT_COLOR, mPaintImageView.getPaintColor());
+        if (mClearActionButton.getVisibility() == View.VISIBLE) {
+            outState.putBoolean(STATE_CLEAR, true);
+        } else {
+            outState.putBoolean(STATE_CLEAR, false);
+        }
+
+        super.onSaveInstanceState(outState);
     }
 
     protected void initData() {

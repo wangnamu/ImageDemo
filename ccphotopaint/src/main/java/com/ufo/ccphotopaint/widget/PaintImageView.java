@@ -10,7 +10,9 @@ import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
+import android.os.Parcelable;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 
@@ -49,8 +51,20 @@ public class PaintImageView extends TouchImageView {
         this.setImageBitmap(mRealBitmap);
     }
 
+
     public Bitmap getBitmap() {
         return mBitmap;
+    }
+
+    public void setBitmap(Bitmap bitmap) {
+
+        mBitmap = bitmap.copy(Bitmap.Config.ARGB_8888, true);
+
+        if (bitmap != null && !bitmap.isRecycled()) {
+            bitmap.recycle();
+            System.gc();
+            bitmap = null;
+        }
     }
 
     public Bitmap combineBitmap() {
@@ -129,6 +143,7 @@ public class PaintImageView extends TouchImageView {
             }
         }
 
+
         mPaint = new Paint();
         mPaint.setAntiAlias(true);
         mPaint.setDither(true);
@@ -149,7 +164,9 @@ public class PaintImageView extends TouchImageView {
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
 
-        mBitmap = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888);
+        if (mBitmap == null) {
+            mBitmap = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888);
+        }
         mCanvas = new Canvas(mBitmap);
 
     }
