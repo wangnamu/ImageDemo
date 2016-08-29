@@ -1,6 +1,5 @@
 package com.ufo.ccphotopaint;
 
-
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;

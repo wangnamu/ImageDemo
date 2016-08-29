@@ -38,7 +38,6 @@ public class CCPhotoModel implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(path);
         dest.writeString(description);
-
     }
 
     public static final Creator<CCPhotoModel> CREATOR = new Creator<CCPhotoModel>() {
