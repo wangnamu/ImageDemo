@@ -34,7 +34,6 @@ public class CCPhotoViewActivity extends AppCompatActivity implements CCPhotoVie
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_ACTION_BAR_OVERLAY);
         initContentView();
         initControls();
         initActionBar();
@@ -48,21 +47,14 @@ public class CCPhotoViewActivity extends AppCompatActivity implements CCPhotoVie
 
     protected void initActionBar() {
 
-        Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(mToolbar);
-
         actionBar = getSupportActionBar();
 
         actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor(BACKGROUND_COLOR)));
         actionBar.setSplitBackgroundDrawable(new ColorDrawable(Color.parseColor(BACKGROUND_COLOR)));
 
-
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
             pageScrolled();
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                actionBar.setElevation(25);
-            }
         }
 
     }

@@ -25,15 +25,15 @@
         </activity>
         <activity
             android:name="com.ufo.ccphotoview.CCPhotoViewActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar">
+            android:theme="@style/CCPhotoViewTheme.ActionBarOverlay">
         </activity>
         <activity
             android:name="com.ufo.ccphotoview.CCPhotoViewWithDelActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar">
+            android:theme="@style/CCPhotoViewTheme.ActionBarOverlay">
         </activity>
         <activity
             android:name="com.ufo.ccphotoview.CCPhotoViewWithTextActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar">
+            android:theme="@style/CCPhotoViewTheme.ActionBarOverlay">
         </activity>
         <activity android:name=".UFOPhotoPreviewActivity">
         </activity>

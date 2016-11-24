@@ -17,6 +17,7 @@ import com.bumptech.glide.Glide;
 import com.ufo.ccphotogridview.CCPhotoGridView;
 import com.ufo.ccphotogridview.CCPhotoGridViewAdapter;
 import com.ufo.ccphotoview.CCPhotoViewActivity;
+import com.ufo.ccphotoview.CCPhotoViewWithDelActivity;
 import com.ufo.ccphotoview.CCPhotoViewWithTextActivity;
 import com.ufo.ccphotoview.model.CCPhotoModel;
 
@@ -114,22 +115,22 @@ public class UFOGridViewActivity extends AppCompatActivity {
                 @Override
                 public void onItemClick(View view, int index, News t) {
 
-                    Intent intent = new Intent(UFOGridViewActivity.this, CCPhotoViewWithTextActivity.class);
+                    Intent intent = new Intent(UFOGridViewActivity.this, CCPhotoViewActivity.class);
                     intent.putExtra(CCPhotoViewActivity.EXTRA_CURRENT_ITEM, index);
-//                    intent.putExtra(CCPhotoViewActivity.EXTRA_PHOTOS,
-//                            mNewsList.get(position).Pics);
+                    intent.putExtra(CCPhotoViewActivity.EXTRA_PHOTOS,
+                            mNewsList.get(position).Pics);
 
-                    ArrayList<CCPhotoModel> list = new ArrayList<>();
-                    ArrayList<String> pics = mNewsList.get(position).Pics;
-
-                    for (String pic : pics) {
-                        CCPhotoModel ccPhotoModel = new CCPhotoModel();
-                        ccPhotoModel.setPath(pic);
-                        ccPhotoModel.setDescription("Picture-->" + UUID.randomUUID().toString());
-                        list.add(ccPhotoModel);
-                    }
-
-                    intent.putParcelableArrayListExtra(CCPhotoViewWithTextActivity.CCPHOTOMODEL_EXTRA, list);
+//                    ArrayList<CCPhotoModel> list = new ArrayList<>();
+//                    ArrayList<String> pics = mNewsList.get(position).Pics;
+//
+//                    for (String pic : pics) {
+//                        CCPhotoModel ccPhotoModel = new CCPhotoModel();
+//                        ccPhotoModel.setPath(pic);
+//                        ccPhotoModel.setDescription("Picture-->" + UUID.randomUUID().toString());
+//                        list.add(ccPhotoModel);
+//                    }
+//
+//                    intent.putParcelableArrayListExtra(CCPhotoViewWithTextActivity.CCPHOTOMODEL_EXTRA, list);
 
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                         ActivityOptionsCompat activityOptionsCompat = ActivityOptionsCompat.makeScaleUpAnimation(view,

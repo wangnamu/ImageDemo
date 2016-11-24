@@ -40,7 +40,6 @@ public class GridViewNotifyActivity extends AppCompatActivity {
 
     private void initControl() {
 
-
         mButton = (Button) findViewById(R.id.button);
 
         mCCPhotoGridView = (CCPhotoGridView) findViewById(R.id.cc_grid_view);

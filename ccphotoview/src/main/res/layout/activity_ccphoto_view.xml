@@ -11,9 +11,7 @@
     <FrameLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
-        <include layout="@layout/toolbar_ccphoto_view"/>
+        android:layout_height="wrap_content">
 
         <fragment
             android:id="@+id/photoPagerFragment"

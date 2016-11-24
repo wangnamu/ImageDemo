@@ -17,17 +17,7 @@
             <option value="$PROJECT_DIR$/imageutil" />
           </set>
         </option>
-        <option name="myModules">
-          <set>
-            <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/ccphotogridview" />
-            <option value="$PROJECT_DIR$/ccphotopaint" />
-            <option value="$PROJECT_DIR$/ccphotopreview" />
-            <option value="$PROJECT_DIR$/ccphotoview" />
-            <option value="$PROJECT_DIR$/imageutil" />
-          </set>
-        </option>
+        <option name="resolveModulePerSourceSet" value="false" />
       </GradleProjectSettings>
     </option>
   </component>
